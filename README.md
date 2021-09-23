@@ -25,6 +25,4 @@ Get the criptocoin sentiment with just some clicks
 ##### Observations
 - > The app will only get the first 10 coins ordered by marketcap and 100 tweets because of api limits (twitterAPI, cryptocompareAPI
 - > This repo uses github actions to test and deploy the app (if the tests pass) on heroku
-
-
-
+- > I used a [react template](https://www.creative-tim.com/product/light-bootstrap-dashboard-react) by creative-time and edited it
