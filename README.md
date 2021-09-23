@@ -4,7 +4,7 @@ Get the criptocoin sentiment with just some clicks
 ![alt text](readme-images/cripto-sentiment-front.png "Front Page")
 
 ## About
-> This is just an MVP site that i made to improve my skills with django REST framework and React.js
+> This is just an MVP site I made to improve my skills with django REST framework and React.js
 
 #### Tech and Librarys
  - Django
