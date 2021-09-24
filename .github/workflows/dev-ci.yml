@@ -20,5 +20,11 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     - name: Run Tests
+      env: 
+        DJANGO_SECRET_KEY: ${{secrets.DJANGO_SECRET_KEY}}
+        DJANGO_DEBUG: 1
+        CRYPTOCOMPARE_API_KEY: ${{secrets.CRYPTOCOMPARE_API_KEY}}
+        TWITTER_CONSUMER_KEY: ${{secrets.TWITTER_CONSUMER_KEY}}
+        TWITTER_KEY_SECRET: ${{secrets.TWITTER_KEY_SECRET}}
       run: |
         python app/manage.py test && flake8
