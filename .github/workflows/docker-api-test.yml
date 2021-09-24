@@ -15,7 +15,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker-compose build
+      run: docker build -f dockerfiles/api/Dockerfile .
     - name: Test the api container
-      run: ./compose.sh test
-      shell: bash
+      run: docker-compose run api sh -c "python manage.py test && flake8"
