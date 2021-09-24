@@ -1,6 +1,6 @@
 # Cripto Sentiment
 Get the criptocoin sentiment with just some clicks
-s
+
 ![alt text](readme-images/cripto-sentiment-front.png "Front Page")
 
 ## About
