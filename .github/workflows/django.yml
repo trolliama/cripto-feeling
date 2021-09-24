@@ -20,4 +20,4 @@ jobs:
         pip install -r requirements.txt
     - name: Run Tests
       run: |
-        python manage.py test && flak8
+        python app/manage.py test && flake8
