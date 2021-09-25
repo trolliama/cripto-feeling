@@ -21,7 +21,6 @@ jobs:
           heroku_app_name: "cripto-sentiment-api"
           heroku_email: "caiow2001@gmail.com"
           usedocker: true
-          appdir: api
   deploy-front:
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
@@ -40,4 +39,3 @@ jobs:
           heroku_app_name: "cripto-sentiment-front"
           heroku_email: "caiow2001@gmail.com"
           usedocker: true
-          appdir: ./front
