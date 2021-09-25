@@ -1,32 +1,31 @@
-name: Django CI
+name: Api Tests
 
 on:
   push:
-    branches: [ dev, master ]
+    branches: [dev, master]
   pull_request:
-    branches: [ master ]
-    
+    branches: [master]
+
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up Python 3.9
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.9
-    - name: Install Dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r api/requirements.txt
-    - name: Run Tests
-      env: 
-        DJANGO_SECRET_KEY: ${{secrets.DJANGO_SECRET_KEY}}
-        DJANGO_DEBUG: 1
-        CRYPTOCOMPARE_API_KEY: ${{secrets.CRYPTOCOMPARE_API_KEY}}
-        TWITTER_CONSUMER_KEY: ${{secrets.TWITTER_CONSUMER_KEY}}
-        TWITTER_KEY_SECRET: ${{secrets.TWITTER_KEY_SECRET}}
-      run: |
-        python api/app/manage.py test && flake8
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r api/requirements.txt
+      - name: Run Tests
+        env:
+          DJANGO_SECRET_KEY: ${{secrets.DJANGO_SECRET_KEY}}
+          DJANGO_DEBUG: 1
+          CRYPTOCOMPARE_API_KEY: ${{secrets.CRYPTOCOMPARE_API_KEY}}
+          TWITTER_CONSUMER_KEY: ${{secrets.TWITTER_CONSUMER_KEY}}
+          TWITTER_KEY_SECRET: ${{secrets.TWITTER_KEY_SECRET}}
+        run: |
+          python api/app/manage.py test && flake8

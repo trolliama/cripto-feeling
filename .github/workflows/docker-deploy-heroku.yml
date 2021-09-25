@@ -1,8 +1,7 @@
-name: CI
-
+name: Heroku Deploy
 on:
   workflow_run:
-    workflows: ["Run Tests"]
+    workflows: ["Api Tests"]
     branches: [master]
     types:
       - completed
