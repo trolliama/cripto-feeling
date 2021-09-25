@@ -31,7 +31,10 @@ SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 # DEBUG = True
 DEBUG = int(os.environ.get("DJANGO_DEBUG", 0))
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "cripto-sentiment-api.herokuapp.com",
+    "cripto-sentiment-front.herokuapp.com",
+]
 
 
 # Application definition
