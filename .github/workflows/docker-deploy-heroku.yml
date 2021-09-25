@@ -21,7 +21,6 @@ jobs:
           heroku_app_name: "cripto-sentiment-api"
           heroku_email: "caiow2001@gmail.com"
           usedocker: true
-          env_file: "app.env"
           appdir: api
   deploy-front:
     runs-on: ubuntu-latest
@@ -29,6 +28,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Deploy to Heroku
+        env: # All env variables needs to have HD_ prefix due to the heroku action logic
+          HD_DJANGO_SECRET_KEY: ${{secrets.DJANGO_SECRET_KEY}}
+          HD_DJANGO_DEBUG: 1
+          HD_CRYPTOCOMPARE_API_KEY: ${{secrets.CRYPTOCOMPARE_API_KEY}}
+          HD_TWITTER_CONSUMER_KEY: ${{secrets.TWITTER_CONSUMER_KEY}}
+          HD_TWITTER_KEY_SECRET: ${{secrets.TWITTER_KEY_SECRET}}
         uses: AkhileshNS/heroku-deploy@v3.12.12
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
