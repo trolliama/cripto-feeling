@@ -4,7 +4,6 @@ services:
   api:
     build:
       context: ./api
-      dockerfile: ../dockerfiles/api/Dockerfile
     ports:
       - 8000:8000
     volumes:
@@ -19,7 +18,6 @@ services:
   front:
     build:
       context: ./front
-      dockerfile: ../dockerfiles/front/Dockerfile
     ports:
       - 3000:3000
     volumes:

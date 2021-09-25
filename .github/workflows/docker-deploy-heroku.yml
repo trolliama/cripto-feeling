@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  workflow_run:
+    workflows: ["Run Tests"]
+    branches: [master]
+    types:
+      - completed
+
+  workflow_dispatch:
+
+jobs:
+  deploy-api:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Deploy to Heroku
+        uses: AkhileshNS/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "cripto-sentiment-api"
+          heroku_email: "caiow2001@gmail.com"
+          usedocker: true
+          env_file: "../app.env"
+          appdir: ./api
+  deploy-front:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Deploy to Heroku
+        uses: AkhileshNS/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "cripto-sentiment-front"
+          heroku_email: "caiow2001@gmail.com"
+          usedocker: true
+          appdir: ./front
