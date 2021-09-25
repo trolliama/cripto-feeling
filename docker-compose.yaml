@@ -3,12 +3,12 @@ version: "3"
 services:
   api:
     build:
-      context: .
-      dockerfile: ./dockerfiles/api/Dockerfile
+      context: ./api
+      dockerfile: ../dockerfiles/api/Dockerfile
     ports:
       - 8000:8000
     volumes:
-      - ./app:/app
+      - ./api/app:/app
     env_file:
       - app.env
     command: >
@@ -18,8 +18,8 @@ services:
 
   front:
     build:
-      context: .
-      dockerfile: ./dockerfiles/front/Dockerfile
+      context: ./front
+      dockerfile: ../dockerfiles/front/Dockerfile
     ports:
       - 3000:3000
     volumes:
