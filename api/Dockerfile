@@ -23,4 +23,4 @@ USER user
 
 RUN python -m nltk.downloader vader_lexicon
 
-CMD ["gunicorn","app.wsgi:application","--bind","0.0.0.0:8000","--timeout","300"]
+CMD ["gunicorn","app.wsgi:application","--bind","0.0.0.0:$PORT","--timeout","300"]
