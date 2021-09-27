@@ -5,7 +5,7 @@ WORKDIR /front
 
 COPY . .
 
-RUN npm install -g npm@7.20.3
+RUN npm install -g npm@6
 RUN npm install
 
 RUN npm rebuild node-sass
