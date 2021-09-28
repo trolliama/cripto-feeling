@@ -63,7 +63,7 @@ function App() {
         }
       })
       .catch((error) => {
-        alert("Moeda não encontrada");
+        alert("Cripto not found");
         console.log(error);
         setCoin("bitcoin");
       })

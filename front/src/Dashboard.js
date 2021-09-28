@@ -40,7 +40,7 @@ function Dashboard(props) {
                 </Col>
                 <Col xs="7">
                   <div className="numbers">
-                    <p className="card-category">Preço</p>
+                    <p className="card-category">Price</p>
                     <Card.Title as="h4">{props.price}</Card.Title>
                   </div>
                 </Col>
@@ -48,7 +48,7 @@ function Dashboard(props) {
             </Card.Body>
             <Card.Footer>
               <hr></hr>
-              <div className="stats">Preço do ativo no momento</div>
+              <div className="stats">Current cripto price</div>
             </Card.Footer>
           </Card>
         </Col>
@@ -65,7 +65,7 @@ function Dashboard(props) {
                 </Col>
                 <Col xs="7">
                   <div className="numbers">
-                    <p className="card-category">Capitalização de Mercado</p>
+                    <p className="card-category">Marketcap</p>
                     <Card.Title as="h4">{props.marketCap}</Card.Title>
                   </div>
                 </Col>
@@ -73,7 +73,7 @@ function Dashboard(props) {
             </Card.Body>
             <Card.Footer>
               <hr></hr>
-              <div className="stats">Total de valor em circulação</div>
+              <div className="stats">Total value in circulation</div>
             </Card.Footer>
           </Card>
         </Col>
@@ -85,22 +85,12 @@ function Dashboard(props) {
                   <IconContext.Provider value={{ color: "FF973B" }}>
                     <div className="icon-big text-center icon-warning">
                       {props.emoji}
-                      {/* {<BiSad /> ? (
-                        majorSentiment == "Neutro"
-                      ) : <FaSadTear /> ? (
-                        majorSentiment == "Pessimista"
-                      ) : (
-                        <FaSmileBeam />
-                      )} */}
-                      {/* <BiSad />
-                    <FaSadTear /> */}
-                      {/* <FaSmileBeam /> */}
                     </div>
                   </IconContext.Provider>
                 </Col>
                 <Col xs="7">
                   <div className="numbers">
-                    <p className="card-category">Sentimento</p>
+                    <p className="card-category">Feeling</p>
                     <Card.Title as="h4">{props.majorSentiment}</Card.Title>
                   </div>
                 </Col>
@@ -108,7 +98,7 @@ function Dashboard(props) {
             </Card.Body>
             <Card.Footer>
               <hr></hr>
-              <div className="stats">Sentimento quanto a moeda</div>
+              <div className="stats">Market feeling about the coin</div>
             </Card.Footer>
           </Card>
         </Col>
@@ -133,7 +123,7 @@ function Dashboard(props) {
             </Card.Body>
             <Card.Footer>
               <hr></hr>
-              <div className="stats">Tweets para analisar os sentimentos</div>
+              <div className="stats">Tweets used to analyze the market feeling</div>
             </Card.Footer>
           </Card>
         </Col>
@@ -142,8 +132,8 @@ function Dashboard(props) {
         <Col md="8">
           <Card>
             <Card.Header>
-              <Card.Title as="h4">Pesquisas no Google</Card.Title>
-              <p className="card-category">3 meses</p>
+              <Card.Title as="h4">Google Searches</Card.Title>
+              <p className="card-category">3 months</p>
             </Card.Header>
             <Card.Body>
               <div className="ct-chart" id="chartHours">
@@ -187,12 +177,11 @@ function Dashboard(props) {
             <Card.Footer>
               <div className="legend">
                 <i className="fas fa-circle text-info"></i>
-                Pesquisas
+                Searches
               </div>
               <hr></hr>
               <div className="stats">
-                O interesse sobre a criptomoeda ao longo do tempo de acordo com
-                pesquisas no google
+                The interest about the criptocoin in the past 3 months based on google searches
               </div>
             </Card.Footer>
           </Card>
@@ -200,8 +189,8 @@ function Dashboard(props) {
         <Col md="4">
           <Card>
             <Card.Header>
-              <Card.Title as="h4">Sentimentos</Card.Title>
-              <p className="card-category">Porcentagem para cada sentimento</p>
+              <Card.Title as="h4">Feelings</Card.Title>
+              <p className="card-category">Percentage for each feeling type</p>
             </Card.Header>
             <Card.Body>
               <div className="ct-chart ct-perfect-fourth" id="chartPreferences">
@@ -219,12 +208,12 @@ function Dashboard(props) {
               </div>
               <div className="legend">
                 <i className="fas fa-circle text-info"></i>
-                Negativos <i className="fas fa-circle text-danger"></i>
-                Neutros <i className="fas fa-circle text-warning"></i>
-                Positivos
+                Negatives <i className="fas fa-circle text-danger"></i>
+                Neutrals <i className="fas fa-circle text-warning"></i>
+                Positives
               </div>
               <hr></hr>
-              <div className="stats">Polaridade</div>
+              <div className="stats">Polarity</div>
             </Card.Body>
           </Card>
         </Col>
