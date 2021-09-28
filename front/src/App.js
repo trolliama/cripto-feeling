@@ -52,13 +52,13 @@ function App() {
         setChartValues(data["trend"]["values"]);
 
         if (data["major_sentiment"] > 0) {
-          setMajorSentiment("Otimista");
+          setMajorSentiment("Optimistic");
           setEmoji(<FaSmileBeam />);
         } else if (data["major_sentiment"] < 0) {
-          setMajorSentiment("Pessimista");
+          setMajorSentiment("Pessimistic");
           setEmoji(<FaSadTear />);
         } else {
-          setMajorSentiment("Neutro");
+          setMajorSentiment("Neutral");
           setEmoji(<BiSad />);
         }
       })
