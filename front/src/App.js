@@ -33,7 +33,7 @@ function App() {
       body: JSON.stringify({ coin: coin }),
     };
     // make the fetch
-    fetch("http://localhost:8000/search/", requestOptions)
+    fetch("https://cripto-sentiment-api.herokuapp.com/search/", requestOptions)
       .then((response) => {
         if (response.ok) {
           return response.json();
