@@ -1,6 +1,10 @@
 # Cripto Sentiment
 Get the criptocoin sentiment with just some clicks
 
+- Links
+  > [Backend API](https://cripto-sentiment-api.herokuapp.com)<br>
+  > [Frontend](https://cripto-sentiment-front.herokuapp.com)
+
 ![alt text](readme-images/cripto-sentiment-front.png "Front Page")
 
 ## About
