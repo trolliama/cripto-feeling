@@ -9,7 +9,7 @@ services:
     volumes:
       - ./api/app:/app
     env_file:
-      - app.env
+      - ./api/app.env
     command: >
       sh -c "python manage.py makemigrations &&
       python manage.py migrate &&
