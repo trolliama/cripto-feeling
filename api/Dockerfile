@@ -17,10 +17,10 @@ RUN mkdir /app
 WORKDIR /app
 COPY ./app /app
 
+RUN python -m nltk.downloader -d /usr/local/share/nltk_data vader_lexicon
+
 RUN adduser user
 
 USER user
-
-RUN python -m nltk.downloader vader_lexicon
 
 CMD gunicorn app.wsgi:application --bind 0.0.0.0:$PORT --timeout 300
