@@ -26,7 +26,7 @@ class TestCriptoSentimentSearch(TestCase):
         self.assertEqual(type(list(res.data["trend"]["trend_dates"])[0]), str)
         self.assertFalse(":" in res.data["trend"]["trend_dates"][0])
 
-    def test_search_invelid_cripto(self) -> None:
+    def test_search_invalid_cripto(self) -> None:
         payload = {"coin": "DoNotExistCoin"}
         res = self.client.post(search_url, payload)
 
