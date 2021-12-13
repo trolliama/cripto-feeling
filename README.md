@@ -1,4 +1,4 @@
-# Cripto Sentiment
+# Cripto Feeling
 Get the criptocoin sentiment with just some clicks
 
 - Links
